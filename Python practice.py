@@ -15,13 +15,16 @@ print("Hola mi nombres es " + Nombre_Apellido + " " + "y mi apellido es"+" " + A
 #Aplica la fórmula de la suma de los primeros n números pares (investigar), 
 # tomando como n la variable de tipo entero y almacenar el resultado en una variable
 
-print("Ingrese valor Inicial")
-i = int(input())
-print("Ingrese el numero fnal")
-f = int(input())
-suma = 0
-print(" **Los numeros pares del Rango**")
-while i <= f:
-    if i % 2 == 0:
-        print(i)
-      i+=1
+def sumar_numeros_pares(inicio, fin):
+    suma = 0
+    for num in range(inicio, fin + 1):
+        if num % 2 == 0:
+            suma += num
+    return suma
+
+inicio = int(input("Ingrese el numero de inicio del rango: "))
+fin = int(input("Ingrese el número final del rango: "))
+
+resultado = sumar_numeros_pares(inicio, fin)
+print(f"La suma de los números pares entre {inicio} y {fin} es: {resultado}")
+
